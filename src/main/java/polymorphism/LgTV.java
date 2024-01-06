@@ -1,6 +1,9 @@
 package polymorphism;
 
 public class LgTV implements TV{
+	public LgTV() {
+		System.out.println("======> LgTV 객체 생성");
+	}
 	 @Override
 	public void powerOn() {
 		System.out.println("LgTV--전원을 켭니다.");
