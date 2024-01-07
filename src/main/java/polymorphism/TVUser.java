@@ -27,11 +27,13 @@ public class TVUser {
 		// 2. spring 컨테이너로부터 필요한 객체를 요청(Lookup)한다 
 		// 이떄 main 메서드에 들어가는 매개변수는
 		///applicationContext.xml 에 등록된 id 를 넣어준다. 
-		TV tv = (TV)factory.getBean(args[0]);
-		tv.powerOn(); 
-		tv.volumeUp(); 
-		tv.volumeDown(); 
-		tv.powerOff();
+		TV tv1 = (TV)factory.getBean(args[0]);
+		//TV tv2 = (TV)factory.getBean(args[0]);
+		//TV tv3 = (TV)factory.getBean(args[0]);
+		tv1.powerOn(); 
+		tv1.volumeUp(); 
+		tv1.volumeDown(); 
+		tv1.powerOff();
 		 
 		 // 3. Spring 컨데이너를 종료한다. 
 		 factory.close();
