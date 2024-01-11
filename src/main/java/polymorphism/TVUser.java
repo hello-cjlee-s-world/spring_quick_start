@@ -21,7 +21,7 @@ public class TVUser {
 		// applicationContext를 매개변수로 GenericXmlApplicationContext 인스턴스를 생성하기만 해도
 		// applicationContext의 beans에 등록된 객체들이 생성된다
 		AbstractApplicationContext factory = 
-				new GenericXmlApplicationContext("applicationContext.xml");
+				new GenericXmlApplicationContext("ApplicationContextPolymorphism.xml");
 		
 		
 		// 2. spring 컨테이너로부터 필요한 객체를 요청(Lookup)한다 
