@@ -12,4 +12,11 @@
 </context:component-scan>
 
 
+<!--  Setter 인젝션 설정 실습  -->
+<!-- 
+<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
+	<property name="userDAO" ref="userDAO" />
+</bean>
+
+<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean> -->
 </beans>
