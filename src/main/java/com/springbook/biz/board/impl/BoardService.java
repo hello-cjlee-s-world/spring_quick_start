@@ -20,6 +20,6 @@ public interface BoardService {
 	BoardVO getBoard(BoardVO vo);
 
 	// 글 목록 조회
-	List<BoardVO> getBoardList();
+	List<BoardVO> getBoardList(BoardVO vo);
 
 }

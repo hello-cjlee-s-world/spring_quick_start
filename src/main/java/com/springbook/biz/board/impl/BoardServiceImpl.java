@@ -7,10 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardVO;
 
+
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
-	private BoardDao boardDAO=null;
+	private BoardDao boardDAO;
 
 	@Override
 	public void insertBoard(BoardVO vo) {
@@ -33,8 +34,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<BoardVO> getBoardList() {
-		return boardDAO.getBoardList();
+	public List<BoardVO> getBoardList(BoardVO vo) {
+		return boardDAO.getBoardList(vo);
 	}
 	
 }

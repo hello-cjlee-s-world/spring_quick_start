@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.springbook.biz.board.impl.BoardServiceImpl;
+import com.springbook.biz.board.impl.BoardService;
 
 public class BoardServiceClient {
 	public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class BoardServiceClient {
 				new GenericXmlApplicationContext("applicationContext.xml");
 		
 		// 2. spring 컨테이너로부터 BoardServiceImpl 객체를 Lookup 한다.
-		BoardServiceImpl boardService = (BoardServiceImpl)container.getBean("boardService");
+		BoardService boardService = (BoardService)container.getBean("boardService");
 		
 		// 3. 글 등록 기능 테스트
 		BoardVO vo = new BoardVO();
@@ -24,12 +24,12 @@ public class BoardServiceClient {
 		boardService.insertBoard(vo);
 		
 		// 4. 글 목록 검색 기능 테스트
-		List<BoardVO> boardList = boardService.getBoardList();
+		List<BoardVO> boardList = boardService.getBoardList(vo);
 		System.out.println("===================글 목록===================");
 		for(BoardVO b:boardList) {
 			System.out.println("====>"+b.toString());
 		}
-		System.out.println(boardList.size());
+		System.out.println("글의 갯수는 "+boardList.size()+"개");
 		
 		// 5. container 종료
 		container.close();

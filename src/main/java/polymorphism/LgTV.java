@@ -13,7 +13,7 @@ public class LgTV implements TV{
 	 @Autowired
 	//@Qualifier("apple")
 	// 어노테이션 의존성 주입 2. 
-	// Autowired는 객체의 이름(apple --> applicationContext.xml에 apple 이라고 설정해놓았다)
+	// Resource는 객체의 이름(apple --> applicationContext.xml에 apple 이라고 설정해놓았다)
 	// 을 기준으로 객체를 탐색하여 의존성 주입을 한다.
 	//@Resource(name="sony")
 	private Speaker speaker;
