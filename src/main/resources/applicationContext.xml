@@ -13,17 +13,38 @@
 
 <context:component-scan base-package="com.springbook.biz">
 </context:component-scan>
+<!-- AOP 어노테이션 설정 -->
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
-<bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
+<!-- AOP xml 설정 실습 내용 -->
+<!-- <bean id="log" class="com.springbook.biz.common.LogAdviceBasic"></bean>
+<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>
+<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>
+<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>
+<bean id="after" class="com.springbook.biz.common.AfterAdvice"></bean>
+<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>
 
 <aop:config>
 	<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
 	<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/>
 	
-	<aop:aspect ref="log">
-		<aop:after pointcut-ref="getPointcut" method="printLog"/>
+
+	<aop:aspect ref="before">
+		<aop:before pointcut-ref="getPointcut" method="beforeLog"/>
 	</aop:aspect>
-</aop:config>
+	<aop:aspect ref="afterReturning">
+		<aop:after-returning pointcut-ref="getPointcut" method="afterLog" returning="returnObj"/>
+	</aop:aspect>
+	<aop:aspect ref="afterThrowing">
+		<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" throwing="exceptObj"/>
+	</aop:aspect>
+	<aop:aspect ref="after">
+		<aop:after pointcut-ref="getPointcut" method="finallyLog"/>
+	</aop:aspect>
+	<aop:aspect ref="around">
+		<aop:around pointcut-ref="getPointcut" method="aroundLog"/>
+	</aop:aspect>
+</aop:config> -->
 
 <!--  Setter 인젝션 설정 실습  -->
 <!-- 

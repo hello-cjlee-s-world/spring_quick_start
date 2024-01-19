@@ -5,7 +5,7 @@ import java.sql.Connection;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.springbook.biz.user.impl.UserServiceImpl;
+import com.springbook.biz.user.impl.UserService;
 
 public class UserServiceClient {
 
@@ -15,7 +15,7 @@ public class UserServiceClient {
 				new GenericXmlApplicationContext("applicationContext.xml");
 		
 		// 2. spring container로부터 UserServiceImpl를 Lookup 한다.
-		UserServiceImpl service = (UserServiceImpl)container.getBean("userService");
+		UserService service = (UserService)container.getBean("userService");
 		
 		// 3. 로그인 기능 테스트
 		UserVO vo = new UserVO();
