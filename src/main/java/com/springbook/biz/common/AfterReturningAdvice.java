@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
+import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.user.UserVO;
 
 @Service
@@ -26,8 +27,13 @@ public class AfterReturningAdvice {
 			if(user.getRole().equals("admin")) {
 				System.out.println(user.getName()+" 로그인(admin)");
 			}
+			System.out.println("[After-returning] " + method +"() 메소드 리턴값: "+ user.toString());
+		}
+		if(returnObj instanceof BoardVO) {
+			BoardVO board = (BoardVO) returnObj;
+			System.out.println("[After-returning] " + method +"() 메소드 리턴값: "+ board.toString());
 		}
 		
-		System.out.println("[After-returning] " + method +"() 메소드 리턴값: "+ returnObj.toString());
+		
 	}
 }
