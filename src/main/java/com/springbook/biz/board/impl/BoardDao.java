@@ -23,7 +23,7 @@ public class BoardDao {
 	private final String BOARD_INSERT = "INSERT INTO BOARD(SEQ,TITLE,WRITER,CONTENT) "
 			+ "VALUES((select nvl(max(seq), 0)+1 from BOARD), ?, ?, ?)";
 	private final String BOARD_UPDATE = "UPDATE BOARD "
-			+ "SET TITLE=?, content=?, where seq=?";
+			+ "SET TITLE=?, content=? where seq=?";
 	private final String BOARD_DELETE = "DELETE BOARD WHERE seq=?";
 	private final String BOARD_GET = "SELECT * FROM BOARD WHERE seq=?";
 	private final String BOARD_LIST = "SELECT * FROM BOARD ORDER BY seq DESC";
