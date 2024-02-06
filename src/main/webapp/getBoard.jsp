@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@page import="com.springbook.biz.board.impl.BoardDao"%>
-<%@page import="com.springbook.biz.board.BoardVO"%>
+
 <%
 	/* // 1. 검색할 게시글 번호 추출
 	String seq = request.getParameter("seq");
@@ -44,7 +43,7 @@
 	</tr>
 	<tr>
 		<td bgcolor="orange">등록일</td>
-		<td align="left">${board.regDate }</td>
+		<td align="left">${board.regdate }</td>
 	</tr>
 	<tr>
 		<td bgcolor="orange">조회수</td>
