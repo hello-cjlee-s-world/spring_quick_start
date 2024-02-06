@@ -14,7 +14,7 @@
 	// 3. 응답 화면 구성 
 	
 	/* controller 사용  */
-	List<BoardVO> boardList = (List) session.getAttribute("baordList");
+	 List<BoardVO> boardList = (List) session.getAttribute("boardList"); 
 %>
 <!DOCTYPE html>
 <html>
@@ -52,18 +52,19 @@
 		<th bgcolor="orange" width="150">등록일</th>
 		<th bgcolor="orange" width="100">조회수</th>
 	</tr>
-	
-	<% for(BoardVO board : boardList) {%>
-	<tr>
-		<td><%=board.getSeq()%></td>
-		<td align="left"> 
-			<a href="getBoard.do?seq=<%=board.getSeq() %>"><%= board.getTitle() %></a>
-		</td>
-		<td><%=board.getWriter()%></td>
-		<td><%=board.getRegdate()%></td>
-		<td><%=board.getCnt()%></td>
-	</tr>
-	<% } %>
+	<% if(boardList!=null) {%>
+		<% for(BoardVO board : boardList) {%>
+		<tr>
+			<td><%=board.getSeq()%></td>
+			<td align="left"> 
+				<a href="getBoard.do?seq=<%=board.getSeq() %>"><%= board.getTitle() %></a>
+			</td>
+			<td><%=board.getWriter()%></td>
+			<td><%=board.getRegdate()%></td>
+			<td><%=board.getCnt()%></td>
+		</tr>
+		<% } 
+		}%>
 </table>
 <br>
 <a href="insertBoard.jsp">새 글 등록</a>
