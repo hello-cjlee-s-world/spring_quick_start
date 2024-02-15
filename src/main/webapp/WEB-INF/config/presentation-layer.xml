@@ -31,16 +31,16 @@
 <bean id="deleteBoard" class="com.springbook.view.board.DeleteBoardController"></bean>
 <bean id="logout" class="com.springbook.view.board.LogoutController"></bean>
 
-<!-- ViewResolver 등록 -->
-<!-- 클라이언트가 브라우저에서 바로 .jsp 호출하여 페이지에 접근할 수 없도록 jsp 파일들을 WEB-INF 폴더의 board 폴더로 이동시켰다. -->
-<!-- WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 패턴으로 개발하려면 아래와 같이 InternalResourceViewResolver를 설정해주어야 한다. -->
+<!-- ViewResolver 등록 
+클라이언트가 브라우저에서 바로 .jsp 호출하여 페이지에 접근할 수 없도록 jsp 파일들을 WEB-INF 폴더의 board 폴더로 이동시켰다.
+WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 패턴으로 개발하려면 아래와 같이 InternalResourceViewResolver를 설정해주어야 한다.
  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	<property name="prefix" value="/WEB-INF/board/"></property>
 	<property name="suffix" value=".jsp"></property>
 </bean>
 
 <context:component-scan base-package="com.springbook.view"></context:component-scan>
-
+ -->
 
 
 </beans>
