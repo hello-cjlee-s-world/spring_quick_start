@@ -2,13 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
 	
 <!-- DispatcherServlet에서 controller의 종류를 찾게 해주는 설정 -->
 	<!-- HandlerMapping 등록 --> 
-<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+<!-- <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 	<property name="mappings">
 		<props>
 			<prop key="/login.do">login</prop>
@@ -20,16 +22,16 @@
 			<prop key="/logout.do">logout</prop>
 		</props>
 	</property>
-</bean>
+</bean> -->
 
 	<!-- Controller 등록 -->
-<bean id="login" class="com.springbook.view.user.LoginController"></bean>
+<!--<bean id="login" class="com.springbook.view.user.LoginController"></bean>
 <bean id="getBoardList" class="com.springbook.view.board.GetBoardListController"></bean>
 <bean id="getBoard" class="com.springbook.view.board.GetBoardController"></bean>
 <bean id="insertBoard" class="com.springbook.view.board.InsertBoardController"></bean>
 <bean id="updateBoard" class="com.springbook.view.board.UpdateBoardController"></bean>
 <bean id="deleteBoard" class="com.springbook.view.board.DeleteBoardController"></bean>
-<bean id="logout" class="com.springbook.view.board.LogoutController"></bean>
+<bean id="logout" class="com.springbook.view.board.LogoutController"></bean> -->
 
 <!-- ViewResolver 등록 
 클라이언트가 브라우저에서 바로 .jsp 호출하여 페이지에 접근할 수 없도록 jsp 파일들을 WEB-INF 폴더의 board 폴더로 이동시켰다.
@@ -38,9 +40,9 @@ WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 
 	<property name="prefix" value="/WEB-INF/board/"></property>
 	<property name="suffix" value=".jsp"></property>
 </bean>
-
-<context:component-scan base-package="com.springbook.view"></context:component-scan>
  -->
+<context:component-scan base-package="com.springbook.view"></context:component-scan>
+
 
 
 </beans>
