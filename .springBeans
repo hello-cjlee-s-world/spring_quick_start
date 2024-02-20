@@ -8,8 +8,8 @@
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/resources/ApplicationContextPolymorphism.xml</config>
-		<config>src/main/resources/applicationContext.xml</config>
 		<config>src/main/webapp/WEB-INF/config/presentation-layer.xml</config>
+		<config>src/main/resources/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
