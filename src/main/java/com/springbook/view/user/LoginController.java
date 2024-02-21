@@ -23,6 +23,9 @@ public class LoginController{
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
 	public String login(UserVO vo, UserDAO dao, HttpSession session) {
 		System.out.println("로그인 인증 처리...");
+		if(vo.getId()==null||vo.getId().equals("")) {
+			throw new IllegalArgumentException("아이디는 반드시 입력해야 합니다.");
+		}
 		UserVO user = dao.getUser(vo);
 		System.out.println(vo.getId() + "," +vo.getPassword());
 		if(user != null) { 
@@ -32,5 +35,10 @@ public class LoginController{
 		} else {
 			return("login.jsp");
 		}
+	}
+	@RequestMapping("/logout.do")
+	public String logout () {
+		System.out.println("로그아웃");
+		return "login.jsp";
 	}
 }
