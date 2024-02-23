@@ -1,7 +1,5 @@
 package com.springbook.biz.user;
 
-import java.sql.Connection;
-
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 

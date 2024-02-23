@@ -62,11 +62,13 @@ WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 
 </bean>
 
 <!-- 파일 업로드 설정 commons fileupload (apache 제공 파일 업로드 라이브러리) -->
+<!-- id는 multipartResolver 고정이다. -->
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	<property name="maxUploadSize" value="100000" />
 </bean>
 
 <!-- 에외 처리 설정 -->
+<!-- id는 exceptionResolver로 고정이다. -->
 <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 	<property name="exceptionMappings">
 		<props>
@@ -81,4 +83,22 @@ WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 
 	<property name="defaultErrorView" value="common/error.jsp"></property>
 </bean>
 
+<!-- 다국어 설정 -->
+	<!-- MessageSource등록 --> <!-- id는 messagesSource로 고정해야한다. -->
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basenames">
+		<list> <!-- 아래 설정은 src/main/resources/message 의 파일 두개가 동시에 등록된다.  자세한 내용은 p441 참고-->
+			<value>message.messageSource</value>
+		</list>
+	</property>
+</bean>
+	<!-- localeResolver 등록 --> <!-- id는 localeResolver로 고정해야한다. -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"></bean>
+	<!-- localeChangerInterceptor 등록 -->
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang"/>
+		</bean>
+	</mvc:interceptors>
+	
 </beans>
