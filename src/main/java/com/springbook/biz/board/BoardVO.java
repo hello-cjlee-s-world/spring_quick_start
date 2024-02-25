@@ -1,8 +1,12 @@
 package com.springbook.biz.board;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+//VO(value object)
 
 public class BoardVO {
 	private int seq;
@@ -51,18 +55,21 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	@JsonIgnore // <-- json 변환시 jsonIgnore 어노테이션이 붙은 변수들은 설정하지 않는다.반드시 getter 위에 설정
 	public String getSearchCondition() {
 		return searchCondition;
 	}
 	public void setSearchCondition(String searchCondition) {
 		this.searchCondition = searchCondition;
 	}
+	@JsonIgnore
 	public String getSearchKeyword() {
 		return searchKeyword;
 	}
 	public void setSearchKeyword(String searchKeyword) {
 		this.searchKeyword = searchKeyword;
 	}
+	@JsonIgnore
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}

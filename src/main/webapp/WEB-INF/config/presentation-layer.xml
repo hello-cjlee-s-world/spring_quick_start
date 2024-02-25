@@ -41,7 +41,8 @@ WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 
 	<property name="suffix" value=".jsp"></property>
 </bean>
  -->
-<context:component-scan base-package="com.springbook"></context:component-scan>
+<context:component-scan base-package="com.springbook.view"></context:component-scan>
+<mvc:annotation-driven></mvc:annotation-driven>
 
 <!-- 어노테이션 예외 처리 -->
 <!-- <mvc:annotation-driven></mvc:annotation-driven> -->
