@@ -65,7 +65,7 @@ WEB-INF 폴더는 절대 브라우저에서 접근할 수 없다. 따라서 MVC 
 <!-- 파일 업로드 설정 commons fileupload (apache 제공 파일 업로드 라이브러리) -->
 <!-- id는 multipartResolver 고정이다. -->
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-	<property name="maxUploadSize" value="100000" />
+	<property name="maxUploadSize" value="10000000" />
 </bean>
 
 <!-- 에외 처리 설정 -->
